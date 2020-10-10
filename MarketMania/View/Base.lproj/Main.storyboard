@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="scU-fR-T2f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Market Mania-->
+        <scene sceneID="uFH-6X-KKp">
+            <objects>
+                <tableViewController id="EqH-n0-ihH" customClass="HomeViewController" customModule="MarketMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9kP-lb-qMq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.52941176469999995" green="0.87450980389999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="mcn-Fm-kwH">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                        <connections>
+                            <outlet property="dataSource" destination="EqH-n0-ihH" id="NXv-aB-kpW"/>
+                            <outlet property="delegate" destination="EqH-n0-ihH" id="Zgw-hj-tYv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Market Mania" id="Z3E-oh-32S">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="IYG-IW-AR8">
+                            <color key="tintColor" red="0.085423119369999995" green="0.26501229409999999" blue="0.28255030510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="mcn-Fm-kwH" id="Wqc-NL-bDQ"/>
+                        <outlet property="cartBadge" destination="IYG-IW-AR8" id="bXK-p5-Gfm"/>
+                        <segue destination="209-fa-TVp" kind="show" identifier="goToList" id="dsA-Mg-aDY"/>
+                        <segue destination="1qq-3E-c2E" kind="show" identifier="goToDetails" id="7Rx-e5-bJL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soM-X6-oHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.0434782608697" y="-114.50892857142857"/>
+        </scene>
+        <!--Market Mania-->
+        <scene sceneID="FDM-RD-iEh">
+            <objects>
+                <viewController id="Kvh-eG-S7a" customClass="CartViewController" customModule="MarketMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BpN-zp-yYG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZh-OI-xgG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mYA-2m-3yh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0em-0S-Cof">
+                                <rect key="frame" x="0.0" y="128" width="414" height="645"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kvh-eG-S7a" id="wjf-AA-Z59"/>
+                                    <outlet property="delegate" destination="Kvh-eG-S7a" id="dNq-2U-pNj"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlr-Bc-F99">
+                                <rect key="frame" x="0.0" y="773" width="409" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E41-aU-bAd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wZb-SB-AJS" firstAttribute="trailing" secondItem="hlr-Bc-F99" secondAttribute="trailing" constant="5" id="6uP-jY-ls2"/>
+                            <constraint firstItem="0em-0S-Cof" firstAttribute="leading" secondItem="wZb-SB-AJS" secondAttribute="leading" id="HaT-hr-buG"/>
+                            <constraint firstItem="0em-0S-Cof" firstAttribute="top" secondItem="EZh-OI-xgG" secondAttribute="bottom" id="LW2-ix-kcF"/>
+                            <constraint firstItem="hlr-Bc-F99" firstAttribute="top" secondItem="0em-0S-Cof" secondAttribute="bottom" id="LWb-2R-Vcu"/>
+                            <constraint firstItem="EZh-OI-xgG" firstAttribute="top" secondItem="wZb-SB-AJS" secondAttribute="top" id="YWu-AN-ms3"/>
+                            <constraint firstItem="hlr-Bc-F99" firstAttribute="leading" secondItem="wZb-SB-AJS" secondAttribute="leading" id="bt2-Fg-fEW"/>
+                            <constraint firstItem="EZh-OI-xgG" firstAttribute="leading" secondItem="wZb-SB-AJS" secondAttribute="leading" id="gaB-al-g8G"/>
+                            <constraint firstItem="0em-0S-Cof" firstAttribute="trailing" secondItem="wZb-SB-AJS" secondAttribute="trailing" id="jtA-KZ-bR4"/>
+                            <constraint firstItem="wZb-SB-AJS" firstAttribute="trailing" secondItem="EZh-OI-xgG" secondAttribute="trailing" id="q36-ZB-OjC"/>
+                            <constraint firstItem="hlr-Bc-F99" firstAttribute="bottom" secondItem="wZb-SB-AJS" secondAttribute="bottom" id="zES-ha-cAf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wZb-SB-AJS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Market Mania" id="o9l-jm-Rps"/>
+                    <connections>
+                        <outlet property="tableView" destination="0em-0S-Cof" id="wYl-es-vcF"/>
+                        <outlet property="todayDate" destination="EZh-OI-xgG" id="gri-Hh-dqP"/>
+                        <outlet property="totalPrice" destination="hlr-Bc-F99" id="pe5-VU-mv1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Zd-pGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.0434782608697" y="760.71428571428567"/>
+        </scene>
+        <!--Market Mania-->
+        <scene sceneID="Q1K-2K-iyv">
+            <objects>
+                <viewController id="1qq-3E-c2E" customClass="DetailsViewController" customModule="MarketMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cZM-zi-9jg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t60-62-zNA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1qq-3E-c2E" id="OBb-Wm-WM5"/>
+                                    <outlet property="delegate" destination="1qq-3E-c2E" id="BeQ-tn-P5H"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t60-62-zNA" firstAttribute="leading" secondItem="KsT-Oy-AC6" secondAttribute="leading" id="5Vt-c9-LP8"/>
+                            <constraint firstItem="t60-62-zNA" firstAttribute="top" secondItem="cZM-zi-9jg" secondAttribute="top" id="Bw4-T4-BLq"/>
+                            <constraint firstItem="t60-62-zNA" firstAttribute="trailing" secondItem="KsT-Oy-AC6" secondAttribute="trailing" id="Oyg-KV-cCe"/>
+                            <constraint firstAttribute="bottom" secondItem="t60-62-zNA" secondAttribute="bottom" id="kps-ZX-a6A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KsT-Oy-AC6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Market Mania" id="dD7-SM-owx">
+                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="Z3h-HS-VVb">
+                            <color key="tintColor" red="0.085423119369999995" green="0.26501229409999999" blue="0.28255030510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cartBadge" destination="Z3h-HS-VVb" id="CnV-dr-XTf"/>
+                        <outlet property="tableView" destination="t60-62-zNA" id="8iU-6E-JPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgn-yt-LW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271" y="358"/>
+        </scene>
+        <!--Market Mania-->
+        <scene sceneID="ToV-VG-M1N">
+            <objects>
+                <viewController id="209-fa-TVp" customClass="SubCategoryListViewController" customModule="MarketMania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oc9-Yy-hWs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ydA-Mf-Brv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UmJ-RG-p6c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="azR-s2-Pii">
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wT3-uT-Ill">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="209-fa-TVp" id="ccb-gu-BFb"/>
+                                    <outlet property="delegate" destination="209-fa-TVp" id="32A-I8-zUS"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="azR-s2-Pii" firstAttribute="top" secondItem="ydA-Mf-Brv" secondAttribute="bottom" id="P0e-gz-kZd"/>
+                            <constraint firstItem="azR-s2-Pii" firstAttribute="trailing" secondItem="kyR-rU-PJK" secondAttribute="trailing" id="P2z-Y9-clZ"/>
+                            <constraint firstAttribute="bottom" secondItem="azR-s2-Pii" secondAttribute="bottom" id="Pu9-nU-Qlv"/>
+                            <constraint firstItem="ydA-Mf-Brv" firstAttribute="top" secondItem="kyR-rU-PJK" secondAttribute="top" id="krt-to-nR1"/>
+                            <constraint firstItem="ydA-Mf-Brv" firstAttribute="leading" secondItem="kyR-rU-PJK" secondAttribute="leading" id="sbl-1r-OFc"/>
+                            <constraint firstItem="kyR-rU-PJK" firstAttribute="trailing" secondItem="ydA-Mf-Brv" secondAttribute="trailing" id="wB7-7H-PUo"/>
+                            <constraint firstItem="azR-s2-Pii" firstAttribute="leading" secondItem="kyR-rU-PJK" secondAttribute="leading" id="xsu-db-AyR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kyR-rU-PJK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Market Mania" id="dYJ-Oi-xR5">
+                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="O27-BV-4qQ">
+                            <color key="tintColor" red="0.085423119369999995" green="0.26501229409999999" blue="0.28255030510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cartBadge" destination="O27-BV-4qQ" id="dnx-IX-WIm"/>
+                        <outlet property="collectionView" destination="azR-s2-Pii" id="GwZ-g6-LpI"/>
+                        <outlet property="subCategoryLabel" destination="ydA-Mf-Brv" id="dN2-YL-sdG"/>
+                        <segue destination="1qq-3E-c2E" kind="show" identifier="goToDetails" id="N3f-tD-d6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZq-Oj-dUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271.0144927536235" y="-488.16964285714283"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ACA-Nh-ZZD">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="scU-fR-T2f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TPB-45-h9y"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KSC-Hg-Ahf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ymq-Sj-O3f" kind="relationship" relationship="viewControllers" id="41q-m4-yXB"/>
+                        <segue destination="Vz3-dU-iHT" kind="relationship" relationship="viewControllers" id="pTc-XX-IIg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0r-UF-GMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="82"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Pu3-wI-FLY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ymq-Sj-O3f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="inA-vl-0MW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nYE-4j-jaw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EqH-n0-ihH" kind="relationship" relationship="rootViewController" id="SUm-kk-3c1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QKI-RA-r8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="-114.50892857142857"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="Y7p-zQ-0vf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vz3-dU-iHT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="rcA-qr-tDx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rwg-ZR-4MQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kvh-eG-S7a" kind="relationship" relationship="rootViewController" id="4Xi-OJ-CUQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wej-Hq-Nf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="760.71428571428567"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Rx-e5-bJL"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+    </resources>
+</document>

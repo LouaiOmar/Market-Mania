@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="400" id="KGk-i7-Jjw" customClass="ImageViewCell" customModule="MarketMania" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vq1-qH-94u" customClass="RectangleListView" customModule="MarketMania" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="310" height="395"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="csN-M3-Orm">
+                                <rect key="frame" x="10" y="10" width="290" height="375"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="csN-M3-Orm" secondAttribute="bottom" constant="10" id="J88-jz-kI2"/>
+                            <constraint firstItem="csN-M3-Orm" firstAttribute="leading" secondItem="vq1-qH-94u" secondAttribute="leading" constant="10" id="SO9-Yv-G4I"/>
+                            <constraint firstAttribute="trailing" secondItem="csN-M3-Orm" secondAttribute="trailing" constant="10" id="fK8-l4-TX5"/>
+                            <constraint firstItem="csN-M3-Orm" firstAttribute="top" secondItem="vq1-qH-94u" secondAttribute="top" constant="10" id="vHE-Jc-kM0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vq1-qH-94u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Pfj-wm-50S"/>
+                    <constraint firstAttribute="bottom" secondItem="vq1-qH-94u" secondAttribute="bottom" id="VNC-ej-oZj"/>
+                    <constraint firstItem="vq1-qH-94u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Zen-Xa-0vb"/>
+                    <constraint firstAttribute="trailing" secondItem="vq1-qH-94u" secondAttribute="trailing" constant="5" id="gOf-Cu-yNV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productImage" destination="csN-M3-Orm" id="N3Z-43-PGV"/>
+            </connections>
+            <point key="canvasLocation" x="276.81159420289856" y="-16.071428571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
